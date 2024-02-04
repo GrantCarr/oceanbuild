@@ -39,3 +39,9 @@ hostname
 hostname -I
 
 
+echo "-----------------------------------------------------------add to ansible server using"
+echo ""
+echo "ssh-copy-id -i $HOME/.ssh/id_rsa.pub ansible@NEWSERVER.local"
+echo ""
+echo ""
+
