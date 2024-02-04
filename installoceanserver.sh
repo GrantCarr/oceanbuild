@@ -1,7 +1,4 @@
-#! /usr/bin/bash
-#apt update
-#apt upgrade -y
-#
+#!/usr/bin/bash
 echo "-----------------------------------------------------------Setting SNMP"
 apt install -y snmp snmpd snmp-mibs-downloader
 sed -i 's/mibs :/# mibs :/g' /etc/snmp/snmp.conf
