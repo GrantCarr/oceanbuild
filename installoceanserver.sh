@@ -1,7 +1,6 @@
 #! /usr/bin/bash
 apt update
 apt upgrade -y
-apt install -y curl git
 #
 echo "-----------------------------------------------------------Setting SNMP"
 apt install -y snmp snmpd snmp-mibs-downloader libnet-snmp-perl snmptrapd
