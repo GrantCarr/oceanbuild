@@ -1,6 +1,8 @@
 #!/bin/bash
 apt update
 apt upgrade -y
+
+
 echo "-----------------------------------------------------------Setting SNMP"
 apt install -y snmp snmpd snmp-mibs-downloader
 sed -i 's/mibs :/# mibs :/g' /etc/snmp/snmp.conf
@@ -17,5 +19,23 @@ passwd grant
 adduser grant sudo
 
 
+echo "-----------------------------------------------------------Adding user ansible"
+adduser --disabled-password --gecos "" ansible
+passwd ansible
+adduser ansible sudo
+
+
+echo "-----------------------------------------------------------Setting sudo password override"
+echo "%sudo ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/allin
+
+
+echo "-----------------------------------------------------------Setting Timezone"
+timedatectl set-timezone Australia/Brisbane
+timedatectl
+
+
+echo "-----------------------------------------------------------hostname detail for DNS"
+hostname
+hostname -I
 
 
