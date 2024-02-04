@@ -32,18 +32,3 @@ timedatectl
 echo "-----------------------------------------------------------hostname detail for DNS"
 hostname
 hostname -I
-#install pihole
-# curl -sSL https://install.pi-hole.net | bash
-#change pihole password
-# pihole -a -p
-#install gravity-sync
-# curl -sSL https://raw.githubusercontent.com/vmstan/gs-install/main/gs-install.sh | bash
-#
-#
-#install ansible on ansibleocean
-#   ssh-copy-id -i $HOME/.ssh/id_rsa.pub ansible@NEWSERVER.local
-#
-#ubuntu VM - expand volume
-# lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
-# resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
-
