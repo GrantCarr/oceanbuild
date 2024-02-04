@@ -1,14 +1,10 @@
 #! /usr/bin/bash
-apt update
-apt upgrade -y
+#apt update
+#apt upgrade -y
 #
 echo "-----------------------------------------------------------Setting SNMP"
-apt install -y snmp snmpd snmp-mibs-downloader libnet-snmp-perl snmptrapd
+apt install -y snmp snmpd snmp-mibs-downloader
 sed -i 's/mibs :/# mibs :/g' /etc/snmp/snmp.conf
-#sed -i '/^[^#]/ s/\(^.*agentaddress.*$\)/#\ \1/' /etc/snmp/snmpd.conf
-#echo "agentaddress udp:161,udp6:[::1]:161" > /etc/snmp/snmpd.conf.d/allin.conf
-#echo "view   systemonly  included   .1.3.6.1.2.1" >> /etc/snmp/snmpd.conf.d/allin.conf
-#echo "view   systemonly  included   .1.3.6.1.4.1" >> /etc/snmp/snmpd.conf.d/allin.conf
 systemctl stop snmpd
 cp -f ./oceansnmpd.conf /etc/snmp/snmpd.conf 
 systemctl restart snmpd
