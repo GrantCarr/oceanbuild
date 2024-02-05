@@ -8,7 +8,7 @@ sudo adduser ansible docker
 
 mkdir docker && cd docker
 mkdir dockge
-# cp ./../dockge.yaml ./dockge/dockge.yaml
+# cp ./../dockge.yaml ./dockge/compose.yaml
 
 curl -fsSL https://get.docker.com -o get-docker.sh
 sudo sh get-docker.sh
