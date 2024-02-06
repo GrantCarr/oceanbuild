@@ -1,17 +1,24 @@
 #!/bin/sh
-sudo apt update
-sudo apt upgrade -y
-sudo apt install -y curl
+apt update
+apt upgrade -y
+apt install -y curl
 
-sudo adduser grant docker
-sudo adduser ansible docker
 
-mkdir docker && cd docker
+mkdir /home/grant/docker && cd /home/grant/docker
 mkdir dockge
-# cp ./../dockge.yaml ./dockge/compose.yaml
+chown -R grant:grant /home/grant/docker
+
+cp dockge.yaml /home/grant/docker.dockge/compose.yaml
+chown grant:grant ./dockge/compose.yaml
+
 
 curl -fsSL https://get.docker.com -o get-docker.sh
-sudo sh get-docker.sh
+sh get-docker.sh
+
+adduser grant docker
+adduser ansible docker
+
+
 
 echo "---------------------------------------reboot before docker compose up -d"
 echo ""
