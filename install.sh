@@ -1,7 +1,7 @@
 #!/bin/bash
 apt update
 apt upgrade -y
-apt install -y curl
+apt install -y curl git
 
 
 echo "-----------------------------------------------------------Setting SNMP"
