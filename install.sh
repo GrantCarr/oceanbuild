@@ -29,6 +29,16 @@ adduser ansible sudo
 echo "-----------------------------------------------------------Setting sudo password override"
 echo "%sudo ALL=(ALL) NOPASSWD: ALL" > /etc/sudoers.d/allin
 
+echo "-----------------------------------------------------------Expand Volumes if VM"
+echo ""
+df -h
+lvextend -l +100%FREE /dev/ubuntu-vg/ubuntu-lv
+resize2fs /dev/mapper/ubuntu--vg-ubuntu--lv
+echo ""
+echo ""
+echo ""
+df -h
+
 
 echo "-----------------------------------------------------------Setting Timezone"
 timedatectl set-timezone Australia/Brisbane
