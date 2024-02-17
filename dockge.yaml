@@ -16,4 +16,3 @@ services:
     environment:
       # Tell Dockge where to find the stacks
       - DOCKGE_STACKS_DIR=/home/grant/docker
-      
