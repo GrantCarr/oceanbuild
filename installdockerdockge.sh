@@ -1,4 +1,9 @@
 #!/bin/sh
+#
+#
+# wget https://raw.githubusercontent.com/GrantCarr/oceanbuild/main/installdockerdockge.sh
+#
+#
 
 echo "----------------------------------------------install docker using help script"
 mkdir /home/grant/docker 
