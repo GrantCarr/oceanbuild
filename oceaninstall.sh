@@ -9,7 +9,7 @@ apt install -y snmp snmpd snmp-mibs-downloader
 sed -i 's/mibs :/# mibs :/g' /etc/snmp/snmp.conf
 systemctl stop snmpd
 #cp -f ./oceansnmpd.conf /etc/snmp/snmpd.conf
-#redo this as create a file
+#redo this as create a file or change this to a wget and then move it
 
 echo "sysLocation    Ocean" > /etc/snmp/snmpd.conf
 echo "sysContact     Me <me@example.org>" >> /etc/snmp/snmpd.conf
