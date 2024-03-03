@@ -24,8 +24,8 @@ sudo docker compose -f /home/grant/docker/dockge/compose.yaml up -d
 #
 echo ""
 echo ""
-echo hostname
-echo hostname -I
+hostname
+hostname -I
 echo ""
 echo "----------------------------------------------dockge on port: 5001"
 echo ""
