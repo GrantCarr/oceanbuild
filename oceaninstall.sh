@@ -5,9 +5,13 @@ apt install -y curl git
 
 
 echo "-----------------------------------------------------------Setting SNMP"
-apt install -y snmp snmpd snmp-mibs-downloader
-sed -i 's/mibs :/# mibs :/g' /etc/snmp/snmp.conf
+apt install -y snmp snmpd 
+apt install -y snmp-mibs-downloader
+
 systemctl stop snmpd
+
+sed -i 's/mibs :/# mibs :/g' /etc/snmp/snmp.conf
+
 #cp -f ./oceansnmpd.conf /etc/snmp/snmpd.conf
 #redo this as create a file or change this to a wget and then move it
 
